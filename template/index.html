@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: auto;
+            width: 95%;
+        }
+        .template-head-img img, .slider-img img {
+            max-width: 100%;
+            height: auto;
+        }
+        .slider-img {
+            position: relative;
+        }
+        .slick-next-btn {
+            position: absolute;
+            right: 3%;
+            height: 100%;
+            cursor: pointer;
+            top: 0;
+        }
+        .slick-prev-btn {
+            position: absolute;
+            left: 3%;
+            height: 100%;
+            cursor: pointer;
+            top: 0;
+            z-index: 2;
+        }
+        .slick-next-btn .bar1 {
+            transform: rotate(45deg) translate(0px, -1.025vw);
+        }
+        .slick-next-btn .bar2 {
+            transform: rotate(135deg) translate(0px, -1.025vw);
+        }
+        .slick-prev-btn .bar1 {
+            transform: rotate(-45deg) translate(0px, -1.025vw);
+        }
+        .slick-prev-btn .bar2 {
+            transform: rotate(-135deg) translate(0px, -1.025vw);
+        }
+
+        .bar1, .bar2 {
+            position: relative;
+            width: 2.562vw;
+            height: 0.293vw;
+            background-color: white;
+            top: 50%;
+            transform: translateY(50%);
+        }
+        .dotss {
+            display: flex;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            bottom: 0;
+        }
+        .dotss2  {
+            display: flex;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            top: 0;
+            border: 2px solid black;
+        }
+        .slider-text {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.493);
+            z-index: 1;
+            bottom: 50%;
+            transform: translateY(50%);
+            width: 30vw;
+            left: 7%;
+            color: white;
+            padding: 1.642vw 2.604vw;
+        }
+        .slider-text h3 {
+            font-size: 1.684vw;
+            font-weight: 600;
+            
+        }
+        .slider-text p {
+            font-size: 1.055vw;
+            letter-spacing: 1px;
+        }
+        .temlate-video video {
+            max-width: 100%;
+            height: auto;
+            margin: auto;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="template-container">
+        <div class="template-head-img">
+            <img src="template-head.jpg" alt="">
+        </div>
+        <div class="template-slider">
+            <div class="slider-img">
+                <img src="slide1.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Your new go-anywhere mouse </h3>
+                    <p>Enjoy comfortable navigation on the go with Surface Mobile Mouse. Its light, low-profile design fits easily in your bag without the bulk of a traditional mouse. </p>
+                </div>
+            </div>
+            <div class="slider-img">
+                <img src="slide2.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Wireless Bluetooth connection  </h3>
+                    <p>Surface Mobile Mouse pairs easily with your Surface laptop via wireless Bluetooth connection — no cords or dongle required.  </p>
+                </div>
+            </div>
+            <div class="slider-img">
+                <img src="slide3.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Smooth, comfortable scrolling  </h3>
+                    <p>New Surface Mobile Mouse features a smooth, sculpted design with a redesigned wheel that fits comfortably in your hand and supports smooth, natural scrolling.  </p>
+                </div>
+            </div>
+            <div class="slider-img">
+                <img src="slide4.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Choose your color  </h3>
+                    <p>Choose from three rich colors — Platinum, Burgundy, and Cobalt Blue. Mix and match with new Surface Signature Type Cover,* Surface Pro Signature Type Cover,* and Surface Pen.*  </p>
+                </div>
+            </div>
+        </div>
+        <div class="template-video">
+            <video controls="" mcafee_wa_processedvideo="true">
+                <source src="img/rs-feature-art-mode-177343188.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="template-slider-2">
+            <div class="slider-img">
+                <img src="burgundy.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Your new go-anywhere mouse </h3>
+                    <p>Enjoy comfortable navigation on the go with Surface Mobile Mouse. Its light, low-profile design fits easily in your bag without the bulk of a traditional mouse. </p>
+                </div>
+            </div>
+            <div class="slider-img">
+                <img src="cobalt.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Wireless Bluetooth connection  </h3>
+                    <p>Surface Mobile Mouse pairs easily with your Surface laptop via wireless Bluetooth connection — no cords or dongle required.  </p>
+                </div>
+            </div>
+            <div class="slider-img">
+                <img src="platinum.jpg" alt="">
+                <div class="slider-text">
+                    <h3>Smooth, comfortable scrolling  </h3>
+                    <p>New Surface Mobile Mouse features a smooth, sculpted design with a redesigned wheel that fits comfortably in your hand and supports smooth, natural scrolling.  </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $('.template-slider').slick({
+            dots: true,
+            dotsClass: 'dotss',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<div type="button" class="slick-prev-btn"><div class="bar1 bar11"></div><div class="bar2 bar12"></div></div>',
+            nextArrow: '<div type="button" class="slick-next-btn"><div class="bar1 bar11"></div><div class="bar2 bar12"></div></div>'
+        });
+        $('.template-slider-2').slick({
+            dots: true,
+            dotsClass: 'dotss2',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: false,
+            nextArrow: false
+        });
+    </script>
+
+</body>
+</html>
