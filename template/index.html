@@ -163,6 +163,19 @@
             color: black;
 
         }
+        .dots1 li button {
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            margin: auto 2px;
+            background-color: white;
+            color: white;
+            border-radius: 50%;
+            border: 1px solid black;
+            display: inline-block;
+        
+            
+        }
         .dots {
             position: absolute;
             display: flex;
@@ -175,7 +188,22 @@
             justify-content: center;
             padding: 0;
         }
-
+        .dots1 {
+            position: absolute;
+            display: flex;
+            bottom: 10%;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100%;
+            text-align: center;
+            list-style-type: none;
+            justify-content: center;
+            padding: 0;
+        }
+        .dots1 .slick-active button {
+            background-color: black;
+            color: black;
+        }
         .active, .dot:hover {
             background-color: black;
             color: white;
@@ -183,20 +211,20 @@
 
         /* Fading animation */
         .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.8s;
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
         }
         @-webkit-keyframes fade {
-  from {opacity: 0.2} 
-  to {opacity: 1}
-}
+            from {opacity: 0.15} 
+            to {opacity: 1}
+        }
 
-@keyframes fade {
-  from {opacity: 0.2} 
-  to {opacity: 1}
-}
+        @keyframes fade {   
+            from {opacity: 0.15} 
+            to {opacity: 1}
+        }
     
     </style>
 </head>
@@ -207,7 +235,7 @@
             <img alt="" src="/UserFiles/Image/template-head.jpg" />
         </div>
         <div class="template-slider">
-            <div class="slider-img">
+            <div class="slider-img fade mySlidesImg">
                 <img src="slide1.jpg" alt="">
                 <img alt="" src="/UserFiles/Image/slide1.jpg" />
                 <div class="slider-text">
@@ -215,7 +243,7 @@
                     <p>Enjoy comfortable navigation on the go with Surface Mobile Mouse. Its light, low-profile design fits easily in your bag without the bulk of a traditional mouse. </p>
                 </div>
             </div>
-            <div class="slider-img">
+            <div class="slider-img fade mySlidesImg">
                 <img src="slide2.jpg" alt="">
                 <img alt="" src="/UserFiles/Image/slide2.jpg" />
                 <div class="slider-text">
@@ -223,7 +251,7 @@
                     <p>Surface Mobile Mouse pairs easily with your Surface laptop via wireless Bluetooth connection — no cords or dongle required.  </p>
                 </div>
             </div>
-            <div class="slider-img">
+            <div class="slider-img fade mySlidesImg">
                 <img src="slide3.jpg" alt="">
                 <img alt="" src="/UserFiles/Image/slide3.jpg" />
                 <div class="slider-text">
@@ -231,7 +259,7 @@
                     <p>New Surface Mobile Mouse features a smooth, sculpted design with a redesigned wheel that fits comfortably in your hand and supports smooth, natural scrolling.  </p>
                 </div>
             </div>
-            <div class="slider-img">
+            <div class="slider-img fade mySlidesImg">
                 <img src="slide4.jpg" alt="">
                 <img alt="" src="/UserFiles/Image/slide4.jpg" />
                 <div class="slider-text">
@@ -239,6 +267,15 @@
                     <p>Choose from three rich colors — Platinum, Burgundy, and Cobalt Blue. Mix and match with new Surface Signature Type Cover,* Surface Pro Signature Type Cover,* and Surface Pen.*  </p>
                 </div>
             </div>
+            <!-- <div type="button" onclick="plusSlides(-1)" class="slick-prev-btn"><div class="bar1 bar11"></div><div class="bar2 bar12"></div></div>
+            <div type="button" onclick="plusSlides(1)" class="slick-next-btn"><div class="bar1 bar11"></div><div class="bar2 bar12"></div></div>
+            <div class="dots1">
+                <span class="dot1" onclick="currentSlide1(1)"></span> 
+                <span class="dot1" onclick="currentSlide1(2)"></span> 
+                <span class="dot1" onclick="currentSlide1(3)"></span>
+                <span class="dot1" onclick="currentSlide1(4)"></span>
+
+              </div> -->
         </div>
         <div class="template-video">
             <video controls="" mcafee_wa_processedvideo="true">
@@ -333,7 +370,7 @@
     <script>
         $('.template-slider').slick({
             dots: true,
-         //   dotsClass: 'dotss',
+            dotsClass: 'dots1',
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -362,14 +399,39 @@
               });
             }
     </script>
-
+<!-- <script>
+    var slideIndex1 = 1;
+    showSlides1(slideIndex1);
+    
+    function plusSlides(n) {
+      showSlides1(slideIndex1 += n);
+    }
+    
+    function currentSlide1(n) {
+      showSlides1(slideIndex1 = n);
+    }
+    
+    function showSlides1(n) {
+      var i;
+      var slides1 = document.getElementsByClassName("mySlidesImg");
+      var dots1 = document.getElementsByClassName("dot1");
+      if (n > slides1.length) {slideIndex1 = 1}    
+      if (n < 1) {slideIndex1 = slides1.length}
+      for (i = 0; i < slides1.length; i++) {
+          slides1[i].style.display = "none";  
+      }
+      for (i = 0; i < dots1.length; i++) {
+          dots1[i].className = dots1[i].className.replace(" active", "");
+      }
+      slides1[slideIndex1-1].style.display = "block";  
+      dots1[slideIndex1-1].className += " active";
+    }
+    </script> -->
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
     
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
+
     
     function currentSlide(n) {
       showSlides(slideIndex = n);
