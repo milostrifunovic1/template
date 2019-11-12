@@ -10,16 +10,26 @@
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', sans-serif; 
+        }
+        .template-container {
+            width: 75%;
             margin: auto;
-            width: 95%;
+            justify-content: center;
         }
         .template-head-img img, .slider-img img {
             max-width: 100%;
             height: auto;
+
+        }
+
+        .template-slider, .template-slider-2 {
+            margin: 0;
+            position: relative;
         }
         .slider-img {
             position: relative;
+            outline: none;
         }
         .slick-next-btn {
             position: absolute;
@@ -37,65 +47,93 @@
             z-index: 2;
         }
         .slick-next-btn .bar1 {
-            transform: rotate(45deg) translate(0px, -1.025vw);
+            transform: rotate(45deg) translate(0px, -1.000vw);
         }
         .slick-next-btn .bar2 {
-            transform: rotate(135deg) translate(0px, -1.025vw);
+            transform: rotate(135deg) translate(0px, -1.000vw);
         }
         .slick-prev-btn .bar1 {
-            transform: rotate(-45deg) translate(0px, -1.025vw);
+            transform: rotate(-45deg) translate(0px, -1.000vw);
         }
         .slick-prev-btn .bar2 {
-            transform: rotate(-135deg) translate(0px, -1.025vw);
+            transform: rotate(-135deg) translate(0px, -1.000vw);
         }
 
         .bar1, .bar2 {
             position: relative;
-            width: 2.562vw;
+            width: 2.650vw;
             height: 0.293vw;
             background-color: white;
             top: 50%;
             transform: translateY(50%);
         }
-        .dotss {
-            display: flex;
-            position: absolute;
-            right: 50%;
-            transform: translateX(50%);
-            bottom: 0;
+        .template-slider .slick-dots {
+            bottom: 2%;
         }
+        .template-slider .slick-dots li {
+            background-color: transparent;
+        }
+
         .dotss2  {
             display: flex;
             position: absolute;
             right: 50%;
             transform: translateX(50%);
-            top: 0;
-            border: 2px solid black;
+            top: 3%;
+            list-style-type: none;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            width: 100%;
         }
+        .dotss2 .tab-link {
+            border: 2px solid black;
+            border-radius: 25px;
+            margin: auto 0.781vw;
+            padding: 0.417vw 0px;
+            width: 10.417vw!important;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.729vw;
+            text-decoration: none;
+            color: black;
+        }
+        .tab-link.active, .tab-link:hover {
+            background-color: black;
+            color: white;
+        }
+
         .slider-text {
             position: absolute;
             background-color: rgba(0, 0, 0, 0.493);
             z-index: 1;
             bottom: 50%;
             transform: translateY(50%);
-            width: 30vw;
+            width: 27vw;
             left: 7%;
             color: white;
-            padding: 1.642vw 2.604vw;
+            padding: 1.000vw 2.000vw;
         }
         .slider-text h3 {
-            font-size: 1.684vw;
-            font-weight: 600;
+            font-size: 1.684vw!important;
+            font-weight: 600!important;
             
         }
         .slider-text p {
-            font-size: 1.055vw;
+            font-size: 1.005vw!important;
             letter-spacing: 1px;
+            text-align: left!important;
         }
-        .temlate-video video {
+        .template-video video {
             max-width: 100%;
             height: auto;
             margin: auto;
+        }
+        .slick-track {
+            padding: 0;
+            
         }
     
     </style>
@@ -104,10 +142,12 @@
     <div class="template-container">
         <div class="template-head-img">
             <img src="template-head.jpg" alt="">
+            <img alt="" src="/UserFiles/Image/template-head.jpg" />
         </div>
         <div class="template-slider">
             <div class="slider-img">
                 <img src="slide1.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/slide1.jpg" />
                 <div class="slider-text">
                     <h3>Your new go-anywhere mouse </h3>
                     <p>Enjoy comfortable navigation on the go with Surface Mobile Mouse. Its light, low-profile design fits easily in your bag without the bulk of a traditional mouse. </p>
@@ -115,6 +155,7 @@
             </div>
             <div class="slider-img">
                 <img src="slide2.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/slide2.jpg" />
                 <div class="slider-text">
                     <h3>Wireless Bluetooth connection  </h3>
                     <p>Surface Mobile Mouse pairs easily with your Surface laptop via wireless Bluetooth connection — no cords or dongle required.  </p>
@@ -122,6 +163,7 @@
             </div>
             <div class="slider-img">
                 <img src="slide3.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/slide3.jpg" />
                 <div class="slider-text">
                     <h3>Smooth, comfortable scrolling  </h3>
                     <p>New Surface Mobile Mouse features a smooth, sculpted design with a redesigned wheel that fits comfortably in your hand and supports smooth, natural scrolling.  </p>
@@ -129,6 +171,7 @@
             </div>
             <div class="slider-img">
                 <img src="slide4.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/slide4.jpg" />
                 <div class="slider-text">
                     <h3>Choose your color  </h3>
                     <p>Choose from three rich colors — Platinum, Burgundy, and Cobalt Blue. Mix and match with new Surface Signature Type Cover,* Surface Pro Signature Type Cover,* and Surface Pen.*  </p>
@@ -137,55 +180,85 @@
         </div>
         <div class="template-video">
             <video controls="" mcafee_wa_processedvideo="true">
-                <source src="img/rs-feature-art-mode-177343188.mp4" type="video/mp4">
+                <source src="rs-feature-art-mode-177343188.mp4" type="video/mp4">
+                    <source src="/UserFiles/File/test video.mp4" />
             </video>
         </div>
         <div class="template-slider-2">
-            <div class="slider-img">
+            <div class="tab-slider">
+                <div class="slider-img tab-pane fade" id="tab1" role="tabpanel"
+                    aria-labelledby="tab1-tab">
                 <img src="burgundy.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/burgundy.jpg" />
                 <div class="slider-text">
-                    <h3>Your new go-anywhere mouse </h3>
-                    <p>Enjoy comfortable navigation on the go with Surface Mobile Mouse. Its light, low-profile design fits easily in your bag without the bulk of a traditional mouse. </p>
+                    <h3>Mix and match with other Surface accessories. </h3>
+                    <p>Surface Go Signature Type Cover coordinates with Surface Mobile Mouse, Pen, & Surface Arc Mouse. </p>
                 </div>
             </div>
-            <div class="slider-img">
+            <div class="slider-img tab-pane fade" id="tab2" role="tabpanel"
+            aria-labelledby="tab2-tab">
                 <img src="cobalt.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/cobalt.jpg" />
                 <div class="slider-text">
-                    <h3>Wireless Bluetooth connection  </h3>
-                    <p>Surface Mobile Mouse pairs easily with your Surface laptop via wireless Bluetooth connection — no cords or dongle required.  </p>
+                    <h3>Mix and match with other Surface accessories.  </h3>
+                    <p>Surface Go Signature Type Cover coordinates with Surface Mobile Mouse, Pen, & Surface Arc Mouse.  </p>
                 </div>
             </div>
-            <div class="slider-img">
+            <div class="slider-img tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                 <img src="platinum.jpg" alt="">
+                <img alt="" src="/UserFiles/Image/platinum.jpg" />
                 <div class="slider-text">
-                    <h3>Smooth, comfortable scrolling  </h3>
-                    <p>New Surface Mobile Mouse features a smooth, sculpted design with a redesigned wheel that fits comfortably in your hand and supports smooth, natural scrolling.  </p>
+                    <h3>Mix and match with other Surface accessories.  </h3>
+                    <p>Surface Go Signature Type Cover coordinates with Surface Mobile Mouse, Pen, & Surface Arc Mouse.  </p>
                 </div>
             </div>
         </div>
+            <div class="dotss2" id="dots-tab" >
+                <a class="tab-link active"  id="tab1-tab" data-toggle="pill"
+                    href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Burgundy</a>
+                <a class="tab-link"  id="tab2-tab" data-toggle="pill"
+                        href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Cobalt</a>
+                <a class="tab-link"  id="tab3-tab" data-toggle="pill" href="#tab3"
+                        role="tab" aria-controls="tab3" aria-selected="false">Platinum</a>
+               
+            </div>
+        </div>
 
+        <br><br>
     </div>
 
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $('.template-slider').slick({
             dots: true,
-            dotsClass: 'dotss',
+         //   dotsClass: 'dotss',
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             prevArrow: '<div type="button" class="slick-prev-btn"><div class="bar1 bar11"></div><div class="bar2 bar12"></div></div>',
             nextArrow: '<div type="button" class="slick-next-btn"><div class="bar1 bar11"></div><div class="bar2 bar12"></div></div>'
         });
-        $('.template-slider-2').slick({
-            dots: true,
+        $('.tab-slider').slick({
+            dots: false,
             dotsClass: 'dotss2',
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: false,
-            nextArrow: false
+            arrows: false
+            
         });
+    </script>
+    <script>
+            // Add active class to the current button (highlight it)
+            var active = document.getElementById("dots-tab");
+            var btns = active.getElementsByClassName("tab-link");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace(" active", "");
+              this.className += " active";
+              });
+            }
     </script>
 
 </body>
