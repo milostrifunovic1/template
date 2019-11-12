@@ -135,6 +135,68 @@
             padding: 0;
             
         }
+
+
+
+
+/* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            /* height: 25px; */
+            /* width: 150px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 25px; */
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            border: 2px solid black;
+            border-radius: 25px;
+            margin: auto 0.781vw;
+            padding: 0.417vw 0px;
+            width: 10.417vw;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.729vw;
+            text-decoration: none;
+            color: black;
+
+        }
+        .dots {
+            position: absolute;
+            display: flex;
+            top: 3%;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100%;
+            text-align: center;
+            list-style-type: none;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .active, .dot:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.8s;
+        }
+        @-webkit-keyframes fade {
+  from {opacity: 0.2} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.2} 
+  to {opacity: 1}
+}
     
     </style>
 </head>
@@ -224,6 +286,46 @@
             </div>
         </div>
 
+        <div class="template-slider-2">
+
+            <div class="mySlides fade slider-img">
+              <img src="burgundy.jpg" >
+              <img alt="" src="/UserFiles/Image/burgundy.jpg" />
+              <div class="slider-text">
+                <h3>Mix and match with other Surface accessories. </h3>
+                <p>Surface Go Signature Type Cover coordinates with Surface Mobile Mouse, Pen, & Surface Arc Mouse. </p>
+            </div>
+            </div>
+            
+            <div class="mySlides fade slider-img">
+              <img src="cobalt.jpg" >
+              <img alt="" src="/UserFiles/Image/cobalt.jpg" />
+              <div class="slider-text">
+                <h3>Mix and match with other Surface accessories. </h3>
+                <p>Surface Go Signature Type Cover coordinates with Surface Mobile Mouse, Pen, & Surface Arc Mouse. </p>
+            </div>
+            </div>
+            
+            <div class="mySlides fade slider-img">
+              <img src="platinum.jpg">
+              <img alt="" src="/UserFiles/Image/platinum.jpg" />
+              <div class="slider-text">
+                <h3>Mix and match with other Surface accessories. </h3>
+                <p>Surface Go Signature Type Cover coordinates with Surface Mobile Mouse, Pen, & Surface Arc Mouse. </p>
+            </div>
+            </div>
+            
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)">Burgundy</span> 
+                <span class="dot" onclick="currentSlide(2)">Cobalt</span> 
+                <span class="dot" onclick="currentSlide(3)">Platinum</span> 
+              </div>
+            
+            </div>
+            <br>
+            
+
+
         <br><br>
     </div>
 
@@ -259,6 +361,35 @@
               this.className += " active";
               });
             }
+    </script>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
     </script>
 
 </body>
